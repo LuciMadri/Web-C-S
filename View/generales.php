@@ -12,8 +12,7 @@
           <link href="View/css/bootstrap.min.css" rel="stylesheet" type="text/css">
           <link href="View/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
           <link href="View/css/bootstrap-social.css" rel="stylesheet" type="text/css">	    
-          <link href="View/css/templatemo_style.css" rel="stylesheet" type="text/css">
-          <link href="View/css/templatemo_script.jss" rel="stylesheet" type="text/js">';
+          <link href="View/css/templatemo_style.css" rel="stylesheet" type="text/css">';
   }
 
   function headerSite()
@@ -51,9 +50,9 @@
     echo '<div class="template-page-wrapper">
 	  		  <div class="navbar-collapse collapse templatemo-sidebar">
 					<ul class="templatemo-sidebar-menu">
-					  <li><a href="A.php"><i class="fa fa-home"></i>Opción A</a></li>
-					  <li><a href="B.php"><i class="fa fa-users"></i>Opción B</a></li>
-					  <li><a href="C.php"><i class="fa fa-users"></i>Opción C</a></li>
+					  <li><a href="A.php"><i class="fa fa-home"></i>Opción AA</a></li>
+					  <li><a href="B.php"><i class="fa fa-users"></i>Opción BB</a></li>
+					  <li><a href="C.php"><i class="fa fa-users"></i>Opción CC</a></li>
 					  <li><a href="" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-sign-out"></i>Cerrar Sesión</a></li>
 					</ul>
 				  </div>';
@@ -77,13 +76,22 @@
         </div>';    
   }
 
-  function footer()
+  function footerSite()
   {
       echo '<footer class="templatemo-footer" >
             <div class="templatemo-copyright">
             <p>Derechos Reservados &copy;</p>
             </div>
-            </footer>';
+            </footer>
+            <script src="../View/js/jquery.min.js"></script>
+            <script src="../View/js/bootstrap.min.js"></script>
+            <script src="../View/js/templatemo_script.js"></script>'; 
   }
-    
+
+  function footerLogin()
+  {
+      echo '<script src="../View/js/jquery.min.js"></script>
+            <script src="../View/js/bootstrap.min.js"></script>'; 
+  }
+
 ?>

@@ -10,8 +10,3 @@ $(document).ready( function() {
 
 });
 
-function Saludar() {
-	//document.getElementById("txtIdentificacion").value = "118850825";
-	//$("#txtIdentificacion").val("118850825");
-	let prueba = $("#txtIdentificacion").val(); 
-}

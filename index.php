@@ -26,16 +26,16 @@ include 'View/generales.php';
                     <div class="templatemo-one-signin col-md-12">
                         <div class="form-group">
                             <div class="col-md-12">
-                                <label for="txtMail" class="control-label">Correo</label>
+                                <label for="lblIdentificacion" class="control-label">lblIdentificacion</label>
                                 <div class="templatemo-input-icon-container">
                                     <i class="fa fa-user"></i>
-                                    <input type="text" class="form-control" id="txtMail" name="txtMail" placeholder="">
+                                    <input type="text" class="form-control" id="txtIdentificacion" name="txtIdentificacion" placeholder="">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-12">
-                                <label for="txtPass" class="control-label">Contraseña</label>
+                                <label for="lblPass" class="control-label">Contraseña</label>
                                 <div class="templatemo-input-icon-container">
                                     <i class="fa fa-lock"></i>
                                     <input type="password" class="form-control" id="txtPass" name="txtPass" placeholder="">

@@ -3,6 +3,7 @@
 ?>
 
 <!DOCTYPE html>
+
 <head>
     <?php 
         headerSite();
@@ -47,12 +48,9 @@
     ?>
 
     <?php 
-        footer();
+        footerSite();
     ?>
 
-    <script src="../View/js/jquery.min.js"></script>
-    <script src="../View/js/bootstrap.min.js"></script>
-    <script src="../View/js/templatemo_script.js"></script>
 </body>
 
 </html>
