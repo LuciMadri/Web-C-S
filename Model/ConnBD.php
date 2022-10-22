@@ -1,12 +1,13 @@
 <?php
 
-function OpenBD(){
-    return mysqli_connect("127.0.0.1:3308", "root", "", "dbviernes");
-}
+    function OpenDB()
+    {
+        return mysqli_connect("127.0.0.1:3308", "root", "", "db_viernes");
+    }
 
-function CloseBD($enlace){
-    
-    mysqli_close($enlace);
-}
+    function CloseDB($enlace)
+    {
+        mysqli_close($enlace);
+    }
 
 ?>

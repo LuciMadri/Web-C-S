@@ -1,11 +1,23 @@
 <?php
-include 'Model/UsuariosModel.php';
+session_start();
+include_once 'Model/UsuariosModel.php';
 
-// Si alguien hizo un post a ese btn 
 if(isset($_POST["btnIngresar"]))
 {
+    $cedula = $_POST["txtIdentificacion"];
+    $contrasenna = $_POST["txtPass"];
 
-    ValidarCredenciales();
+    $datosUsuario = ValidarCredenciales($cedula, $contrasenna);
+
+    if($datosUsuario -> num_rows > 0)
+    {
+        $_SESSION["sesionNombre"] = "Eduardo";
+        header("Location: View\inicio.php");
+    }
+    else
+    {
+        header("Location: index.php");
+    }
 }
 
 ?>

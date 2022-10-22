@@ -1,5 +1,6 @@
 <?php 
-  include 'generales.php';
+session_start();
+include 'generales.php';
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +24,7 @@
     <div class="templatemo-content-wrapper">
         <div class="templatemo-content">
             <ol class="breadcrumb">
-                <li><a href="#">Inicio</a></li>
+                <li> <?php echo $_SESSION["sesionNombre"]; ?> <a href="#"> / Inicio</a></li>
             </ol>
 
             <div class="templatemo-panels">

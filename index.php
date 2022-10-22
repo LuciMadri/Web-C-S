@@ -1,12 +1,13 @@
-<?php
-include 'View/generales.php';
+<?php 
+  include_once 'View/generales.php';
+  include_once 'Controller/UsuariosController.php';
 ?>
 
 <!DOCTYPE html>
 
 <head>
-    <?php
-    headerLogin();
+    <?php 
+        headerLogin();
     ?>
 </head>
 
@@ -14,7 +15,7 @@ include 'View/generales.php';
     <div class="container">
         <div class="col-md-12">
 
-            <form class="form-horizontal templatemo-login-form-2" role="form" action="View/inicio.php" method="post">
+            <form class="form-horizontal templatemo-login-form-2" role="form" action="" method="post">
 
                 <div class="row">
                     <div class="col-md-12">
@@ -26,10 +27,11 @@ include 'View/generales.php';
                     <div class="templatemo-one-signin col-md-12">
                         <div class="form-group">
                             <div class="col-md-12">
-                                <label for="lblIdentificacion" class="control-label">lblIdentificacion</label>
+                                <label for="lblIdentificacion" class="control-label">Identificación</label>
                                 <div class="templatemo-input-icon-container">
                                     <i class="fa fa-user"></i>
-                                    <input type="text" class="form-control" id="txtIdentificacion" name="txtIdentificacion" placeholder="">
+                                    <input type="text" class="form-control" id="txtIdentificacion" name="txtIdentificacion" 
+                                    placeholder="" onblur="ValidarDatos();">
                                 </div>
                             </div>
                         </div>
@@ -38,15 +40,15 @@ include 'View/generales.php';
                                 <label for="lblPass" class="control-label">Contraseña</label>
                                 <div class="templatemo-input-icon-container">
                                     <i class="fa fa-lock"></i>
-                                    <input type="password" class="form-control" id="txtPass" name="txtPass" placeholder="">
+                                    <input type="password" class="form-control" id="txtPass" name="txtPass"
+                                        placeholder="">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-12">
-                                <input type="submit" value="Ingresar" id="btnIngresar" name="btnIngresar" class="btn btn-warning" onclick="Saludar()">
-
-
+                                <input type="submit" value="Ingresar" id="btnIngresar" name="btnIngresar"
+                                    class="btn btn-warning">
                             </div>
                         </div>
                     </div>
@@ -58,6 +60,10 @@ include 'View/generales.php';
         </div>
     </div>
 
+    <?php 
+        footerLogin();
+    ?>
+    <script src="../View/js/login.js"></script>
 
 </body>
 

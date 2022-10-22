@@ -1,11 +1,14 @@
 <?php
-include 'Controller/ConnBD.php';
+include_once 'ConnBD.php';
 
-function ValidarCredenciales(){
-    
-    $enlace = OpenBD();
+function ValidarCredenciales($cedula, $contrasenna)
+{
+    $enlace = OpenDB();
+    $procedimiento = "CALL ValidarCredenciales('$cedula', '$contrasenna');";
+    $datosUsuario = $enlace -> query($procedimiento);
 
-    CloseBD($enlace);
+    CloseDB($enlace);
+    return $datosUsuario;
 }
 
 ?>
