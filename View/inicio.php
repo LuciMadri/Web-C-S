@@ -1,6 +1,10 @@
 <?php 
-session_start();
-include 'generales.php';
+
+if (session_status() == PHP_SESSION_NONE)
+    session_start();
+
+include_once __DIR__ . '\generales.php';
+include_once __DIR__ . '\..\Controller\UsuariosController.php';
 ?>
 
 <!DOCTYPE html>
@@ -18,13 +22,13 @@ include 'generales.php';
     ?>
 
     <?php 
-        menu();
+        CargarMenu();
     ?>
 
     <div class="templatemo-content-wrapper">
         <div class="templatemo-content">
             <ol class="breadcrumb">
-                <li> <?php echo $_SESSION["sesionNombre"]; ?> <a href="#"> / Inicio</a></li>
+                <li> <?php echo $_SESSION["sesionNombre"]; ?> <a href="inicio.php"> / Inicio</a></li>
             </ol>
 
             <div class="templatemo-panels">
@@ -53,5 +57,4 @@ include 'generales.php';
     ?>
 
 </body>
-
 </html>

@@ -45,21 +45,11 @@
 				  </div>';
   }
 
-  function menu()
-  {
-    echo '<div class="template-page-wrapper">
-	  		  <div class="navbar-collapse collapse templatemo-sidebar">
-					<ul class="templatemo-sidebar-menu">
-					  <li><a href="A.php"><i class="fa fa-home"></i>Opción AA</a></li>
-					  <li><a href="B.php"><i class="fa fa-users"></i>Opción BB</a></li>
-					  <li><a href="C.php"><i class="fa fa-users"></i>Opción CC</a></li>
-					  <li><a href="" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-sign-out"></i>Cerrar Sesión</a></li>
-					</ul>
-				  </div>';
-	}
-
   function modal()
   {
+    
+    include_once __DIR__ . '\..\Controller\UtilitariosController.php';
+
     echo '<div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
@@ -68,12 +58,14 @@
                 <h4 class="modal-title" id="myModalLabel"></h4>¿Está seguro que quiere cerrar sesión?</h4>
               </div>
               <div class="modal-footer">
-                <a href="" class="btn btn-primary">Sí</a>
-                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                <form action="" method="post">
+                  <input type="submit" value="Sí" id="btnCerrar" name="btnCerrar" class="btn btn-primary">
+                </form>
               </div>
             </div>
           </div>
-        </div>';    
+        </div>';
+
   }
 
   function footerSite()

@@ -147,7 +147,7 @@ h1 { font-size: 24px; }
 /* 8. Bootstrap overrides
 ----------------------------------------------*/
 .nav-pills>li>a, .nav-tabs>li>a, .alert, .progress, .panel, .btn, .panel-group .panel, .form-control, .modal-content, .breadcrumb {
-    border-radius: 0;
+    border-radius: 1;
 }
 .list-group-item:first-child, .panel-heading {
     border-top-left-radius: 0;

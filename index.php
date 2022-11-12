@@ -1,6 +1,6 @@
 <?php 
-  include_once 'View/generales.php';
-  include_once 'Controller/UsuariosController.php';
+  include_once __DIR__ . '\View\generales.php';
+  include_once __DIR__ . '\Controller\UsuariosController.php';
 ?>
 
 <!DOCTYPE html>
@@ -63,7 +63,7 @@
     <?php 
         footerLogin();
     ?>
-    <script src="../View/js/login.js"></script>
+    <script src="View/js/login.js"></script>
 
 </body>
 
