@@ -6,6 +6,9 @@ if (session_status() == PHP_SESSION_NONE)
 include_once __DIR__ . '\generales.php';
 include_once __DIR__ . '\..\Controller\UsuariosController.php';
 
+if($_GET["q"] == null)
+    header("Location: MantUsuarios.php"); 
+
 $datos = ConsultarDatosUsuario($_GET["q"]);
 
 ?>
@@ -81,12 +84,13 @@ $datos = ConsultarDatosUsuario($_GET["q"]);
                     <div class="col-md-3 margin-bottom-15">
                         <label for="lblContrasenna" class="control-label">Contraseña</label>
                         <input type="password" class="form-control" id="txtContrasenna" name="txtContrasenna" required
-                        onclick="LimpiarDatos();" value="<?php echo $datos["contrasenna"] ?>">
+                        onselect="LimpiarDatos();" value="<?php echo $datos["contrasenna"] ?>">
                     </div>
 
                     <div class="col-md-3 margin-bottom-15">
                         <label for="lblConfirmarContrasenna" class="control-label">Confirmar Contraseña</label>
-                        <input type="password" class="form-control" id="txtConfirmarContrasenna" name="txtConfirmarContraseña" required>
+                        <input type="password" class="form-control" id="txtConfirmarContrasenna" name="txtConfirmarContraseña" required
+                        value="<?php echo $datos["contrasenna"] ?>">
                     </div>
                     <div class="col-md-1 margin-bottom-15">
                     </div>

@@ -63,15 +63,14 @@ function ActualizarUsuarioModel($Nombre,$Contrasenna,$TipoUsuario,$Id,$correo)
     CloseDB($enlace);
 }
 
-function CrearUsuarioModel($Cedula, $Contrasenna, $Correo, $Nombre, $TipoUsuario)
+function CambiarEstadoUsuario($Id)
 {
     $enlace = OpenDB();
+    $procedimiento = "call InactivarUsuario($Id);";
 
-    $procedimiento = "call CrearUsuario('$Cedula', '$Contrasenna', '$Correo', '$Nombre', $TipoUsuario);";
     $enlace -> query($procedimiento);
 
     CloseDB($enlace);
 }
-
 
 ?>

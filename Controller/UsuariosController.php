@@ -16,14 +16,14 @@ if(isset($_POST["btnIngresar"]))
     if($datosUsuario -> num_rows > 0)
     {
         $resultado = mysqli_fetch_array($datosUsuario);
-
+        $_SESSION["sesionCedula"] = $resultado["cedula"];
         $_SESSION["sesionNombre"] = $resultado["nombre"];
         $_SESSION["sesionTipoUsuario"] = $resultado["tipoUsuario"];
-        header("Location: View\inicio.php");
+        header("Location: ..\View\inicio.php");
     }
     else
     {
-        header("Location: ..\index.php");
+        header("Location: ..\index.php?error");
     }
 }
 
@@ -41,10 +41,17 @@ function CargarUsuarios()
             echo "<td>" . $resultado["correo"] . "</td>";
             echo "<td>" . $resultado["descripcion"] . "</td>";
             echo "<td>" . $resultado["descripcionEstado"] . "</td>";
-            echo '<td>
-                    <a class="btn btn-primary" href="mantUsuariosEditar.php?q=' . $resultado["id"] . '">Editar<a/>
-                    <a class="btn btn-primary" data-toggle="modal" data-target="#confirmDelete" data-backdrop="static" data-keyboard="false">Inactivar</a>
-                 </td>';
+            
+            if($_SESSION["sesionCedula"] != $resultado["cedula"])
+                echo '<td><a class="btn" href="mantUsuariosEditar.php?q=' . $resultado["id"] . '">Actualizar<a/>';
+            else
+                echo '<td><a class="btn" style="cursor: not-allowed">Actualizar<a/>';
+
+            if($_SESSION["sesionCedula"] != $resultado["cedula"])
+                echo '<a class="btn open-UserDialog" data-toggle="modal" data-target="#DeleteUserModal" data-id=' . $resultado["id"] . '>Cambiar Estado</a></td>';
+            else
+                echo '<a class="btn" style="cursor: not-allowed">Cambiar Estado</a></td>';
+
             echo "</tr>";
         }
     }
@@ -55,24 +62,26 @@ function CargarMenu()
     if($_SESSION["sesionTipoUsuario"] == null)
         header("Location: ..\index.php");
 
-    $datosMenu = pConsultarMenu($_SESSION["sesionTipoUsuario"]);
+    $tipo = $_SESSION["sesionTipoUsuario"];
+    $datosMenu = pConsultarMenu($tipo);
+
+    echo '<div class="template-page-wrapper">
+          <div class="navbar-collapse collapse templatemo-sidebar">
+          <ul class="templatemo-sidebar-menu">';
 
     if($datosMenu -> num_rows > 0)
     {
-        echo '<div class="template-page-wrapper">
-              <div class="navbar-collapse collapse templatemo-sidebar">
-              <ul class="templatemo-sidebar-menu">';
-
         while($resultado = mysqli_fetch_array($datosMenu))
         {
             echo '<li><a href="' . $resultado["redireccion"] . '"><i class="' . $resultado["icono"] . '"></i>' . $resultado["texto"] . '</a></li>';
         }
-
-        echo '<li><a href="" data-toggle="modal" data-target="#confirmModal" data-backdrop="static" data-keyboard="false"><i class="fa fa-sign-out"></i>Cerrar Sesión</a></li>
-              </ul>
-              </div>';
     }
+
+    echo '<li><a href="" data-toggle="modal" data-target="#confirmModal" data-backdrop="static" data-keyboard="false"><i class="fa fa-sign-out"></i>Cerrar Sesión</a></li>
+          </ul>
+          </div>';
 }
+
 
 function ConsultarDatosUsuario($id)
 {
@@ -87,7 +96,6 @@ function ListarTiposUsuario($tipo)
     if($datos -> num_rows > 0)
     {
         echo '<option selected value=""> Seleccione... </option>';
-
         while($fila = mysqli_fetch_array($datos))
         {
             if($tipo == $fila["tipoUsuario"])
@@ -107,19 +115,15 @@ if(isset($_POST["btnActualizar"]))
     $Correo = $_POST["txtCorreo"];
 
     ActualizarUsuarioModel($Nombre, $Contrasenna, $TipoUsuario, $Id, $Correo); 
-    EnviarCorreo($Correo, 'Actualización de Datos', 'Estimad@ ' . $Nombre . '. Sus datos han sido actualizados correctamente'); 
+    //EnviarCorreo($Correo, 'Actualización de Datos', 'Estimad@ ' . $Nombre . '. Sus datos han sido actualizados correctamente'); 
     header("Location: MantUsuarios.php");  
 }
 
-if(isset($_POST["btnAgregar"]))
+if(isset($_POST["CambiarEstadoUsuario"]))
 {
-    $Cedula = $_POST["txtIdentificacion"];
-    $Nombre = $_POST["txtNombre"];
-    $TipoUsuario = $_POST["cboTipoUsuario"];
-    $Correo = $_POST["txtCorreo"];
-    $Contrasenna = $_POST["txtContrasenna"];
-
-    CrearUsuarioModel($Cedula, $Contrasenna, $Correo, $Nombre, $TipoUsuario); 
-
+    $Id = $_POST["Id"];
+    CambiarEstadoUsuario($Id);  
 }
+
+
 ?>

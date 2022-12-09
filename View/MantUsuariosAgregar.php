@@ -15,8 +15,7 @@ include_once __DIR__ . '\..\Controller\UsuariosController.php';
     ?>
 </head>
 
-<body onsubmit="return CompararClaves();">
-<form action="" method="post">
+<body>
 
     <?php 
         navBar();
@@ -50,10 +49,9 @@ include_once __DIR__ . '\..\Controller\UsuariosController.php';
                     </div>
 
                     <div class="col-md-3 margin-bottom-15">
-                        <label for="lblCorreo" class="control-label">Correo Electrónico</label>
-                        <input type="email" class="form-control" id="txtCorreo" name="txtCorreo">
+                        <label for="lblEstado" class="control-label">Estado</label>
+                        <input type="text" class="form-control" id="txtEstado" name="txtEstado">
                     </div>
-
                     <div class="col-md-1 margin-bottom-15">
                     </div>
                 </div>
@@ -65,22 +63,17 @@ include_once __DIR__ . '\..\Controller\UsuariosController.php';
                     </div>
                     <div class="col-md-3 margin-bottom-15">
                         <label for="lblTipoUsuario" class="control-label">Tipo de Usuario</label>
-                        <select class="form-control" id="cboTipoUsuario" name="cboTipoUsuario" required>
-                                <?php 
-                                ListarTiposUsuario($datos["tipoUsuario"]); 
-                                ?>
-                            </select>
+                        <input type="text" class="form-control" id="txtTipoUsuario" name="txtTipoUsuario">
                     </div>
-                
 
                     <div class="col-md-3 margin-bottom-15">
                         <label for="lblContrasenna" class="control-label">Contraseña</label>
-                        <input type="password" class="form-control" id="txtContrasenna" name="txtContrasenna">
+                        <input type="password" class="form-control" id="txtContraseña" name="txtContraseña">
                     </div>
 
                     <div class="col-md-3 margin-bottom-15">
                         <label for="lblConfirmarContrasenna" class="control-label">Confirmar Contraseña</label>
-                        <input type="password" class="form-control" id="txtConfirmarContrasenna" name="txtConfirmarContrasennna">
+                        <input type="password" class="form-control" id="txtConfirmarContraseña" name="txtConfirmarContraseña">
                     </div>
                     <div class="col-md-1 margin-bottom-15">
                     </div>
@@ -93,11 +86,9 @@ include_once __DIR__ . '\..\Controller\UsuariosController.php';
                     </div>
 
                     <div class="col-md-3 margin-bottom-15">
-                        <input type="submit" href="MantUsuarios.php" class="btn btn-info" value="Procesar" id="btnAgregar" name="btnAgregar">
-
+                        <input type="submit" class="btn btn-info" value="Procesar" id="btnProcesar" name="btnProcesar">
                         <a href="MantUsuarios.php"><button type="button" class="btn btn-danger">Cancelar</button></a>
                     </div>
-
                     <div class="col-md-1 margin-bottom-15">
                     </div>
                 </div>
@@ -115,9 +106,5 @@ include_once __DIR__ . '\..\Controller\UsuariosController.php';
         footerSite();
     ?>
 
-    <script src="js/usuarios.js"></script>
-
-
-</form>
 </body>
 </html>

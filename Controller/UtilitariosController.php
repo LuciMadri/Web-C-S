@@ -28,6 +28,7 @@ function EnviarCorreo($destinatario, $asunto, $cuerpo)
     $mail -> Subject = $asunto;
     $mail -> MsgHTML($cuerpo);   
     $mail -> AddAddress($destinatario, 'Usuario Sistema');
+    
     $mail -> send();
 }
 

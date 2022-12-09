@@ -8,11 +8,11 @@
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css">
-          <link href="View/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-          <link href="View/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-          <link href="View/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
-          <link href="View/css/bootstrap-social.css" rel="stylesheet" type="text/css">	    
-          <link href="View/css/templatemo_style.css" rel="stylesheet" type="text/css">';
+          <link href="../View/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+          <link href="../View/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+          <link href="../View/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+          <link href="../View/css/bootstrap-social.css" rel="stylesheet" type="text/css">	    
+          <link href="../View/css/templatemo_style.css" rel="stylesheet" type="text/css">';
   }
 
   function headerSite()
@@ -23,11 +23,12 @@
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css">
-          <link href="View/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-          <link href="View/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-          <link href="View/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
-          <link href="View/css/bootstrap-social.css" rel="stylesheet" type="text/css">	    
-          <link href="../View/css/templatemo_main.css" rel="stylesheet" type="text/css">'; 
+          <link href="../View/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+          <link href="../View/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+          <link href="../View/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+          <link href="../View/css/bootstrap-social.css" rel="stylesheet" type="text/css">	    
+          <link href="../View/css/templatemo_main.css" rel="stylesheet" type="text/css">
+          <link href="../View/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css">'; 
   }
 
   function navBar()
@@ -77,7 +78,10 @@
             </footer>
             <script src="../View/js/jquery.min.js"></script>
             <script src="../View/js/bootstrap.min.js"></script>
-            <script src="../View/js/templatemo_script.js"></script>'; 
+            <script src="../View/js/templatemo_script.js"></script>
+            <script src="../View/js/jquery.dataTables.min.js"></script>
+            <script src="../View/js/dataTables.bootstrap4.min.js"></script>
+            <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>'; 
   }
 
   function footerLogin()

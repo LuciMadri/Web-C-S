@@ -19,7 +19,13 @@
 
                 <div class="row">
                     <div class="col-md-12">
-                        <h2></h2>
+                        
+                    <?php
+                            if (isset($_GET["error"])) {
+                                echo "<h2>Valide sus credenciales</h2>";
+                            }
+                            ?>
+
                     </div>
                 </div>
 
@@ -31,7 +37,7 @@
                                 <div class="templatemo-input-icon-container">
                                     <i class="fa fa-user"></i>
                                     <input type="text" class="form-control" id="txtIdentificacion" name="txtIdentificacion" 
-                                    placeholder="" onblur="ValidarDatos();">
+                                    placeholder="" onblur="ValidarDatos();" autocomplete="Off">
                                 </div>
                             </div>
                         </div>
